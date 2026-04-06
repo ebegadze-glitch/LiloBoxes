@@ -1,0 +1,188 @@
+/* ===== ცვლადები და ფერები ===== */
+:root {
+  --light-blue: #e3f2fd;
+  --main-blue: #1a4a8a;
+  --light-green: #e8f5e9;
+  --main-green: #2e7d32;
+  --light-gold: #fff9c4;
+  --main-gold: #b89a5a;
+  --dark: #2c3e50;
+  --white: #ffffff;
+  --ff-serif: 'Playfair Display', serif;
+  --ff-sans: 'DM Sans', sans-serif;
+  --transition: 0.3s ease;
+}
+
+/* ===== ბაზისური სტილები ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--ff-sans);
+  color: var(--dark);
+  line-height: 1.6;
+  background-color: #fcfcfc;
+}
+
+/* ===== ნავიგაცია ===== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background: rgba(255, 255, 255, 0.95);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--light-blue);
+}
+
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon {
+  width: 40px; height: 40px;
+  background: var(--main-blue);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+}
+.logo-icon svg { width: 24px; }
+.logo-text {
+  font-family: var(--ff-serif);
+  font-weight: 700;
+  color: var(--main-blue);
+  font-size: 1.2rem;
+}
+
+.nav-links { display: flex; list-style: none; gap: 25px; }
+.nav-links a {
+  text-decoration: none; color: var(--dark);
+  font-weight: 500; transition: var(--transition);
+}
+.nav-links a:hover { color: var(--main-gold); }
+
+/* ===== ღილაკები ===== */
+.btn {
+  padding: 10px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  display: inline-block;
+}
+.btn-primary { background: var(--main-blue); color: var(--white); }
+.btn-accent { background: var(--main-gold); color: var(--white); }
+.btn-outline { border: 2px solid var(--main-blue); color: var(--main-blue); }
+.btn:hover { transform: translateY(-2px); opacity: 0.9; }
+
+/* ===== Hero სექცია ===== */
+.hero {
+  padding: 150px 5% 80px;
+  background: linear-gradient(135deg, var(--light-blue) 0%, var(--light-green) 100%);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 50px;
+}
+.hero-badge {
+  background: var(--white);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--main-blue);
+  display: inline-block; margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: var(--ff-serif);
+  font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px;
+}
+.hero h1 span { color: var(--main-green); font-style: italic; }
+.hero-desc { font-size: 1.1rem; color: #555; margin-bottom: 30px; }
+.hero-btns { display: flex; gap: 15px; }
+
+.hero-img-placeholder {
+  width: 100%; height: 400px;
+  background: var(--white);
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+.discount-tag {
+  position: absolute; top: 20px; right: 20px;
+  background: var(--main-gold); color: white;
+  padding: 15px; border-radius: 50%; width: 80px; height: 80px;
+  display: flex; align-items: center; text-align: center; font-size: 0.7rem; font-weight: bold;
+}
+
+/* ===== სექციები ===== */
+.section { padding: 80px 5%; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.alt-bg { background-color: #f4f7f6; }
+.section-eyebrow { color: var(--main-gold); text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; font-weight: bold; }
+.section-title { font-family: var(--ff-serif); font-size: 2.5rem; margin-bottom: 40px; }
+.text-center { text-align: center; }
+
+/* ===== ბარათები ===== */
+.services-grid, .sizes-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;
+}
+
+.service-card {
+  padding: 40px; background: var(--white); border-radius: 15px;
+  border: 1px solid #eee; transition: var(--transition);
+}
+.service-card:hover { border-color: var(--main-blue); transform: translateY(-5px); }
+
+.icon-box {
+  width: 60px; height: 60px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; margin-bottom: 20px;
+}
+.icon-box.blue { background: var(--light-blue); }
+.icon-box.green { background: var(--light-green); }
+.icon-box.gold { background: var(--light-gold); }
+
+.size-card {
+  padding: 40px; background: var(--white); border-radius: 15px;
+  text-align: center; border: 2px solid transparent; position: relative;
+}
+.size-card.popular { border-color: var(--main-gold); }
+.popular-tag {
+  position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+  background: var(--main-gold); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.7rem;
+}
+.size-name { font-size: 1.2rem; font-weight: bold; }
+.size-val { font-size: 2.5rem; font-family: var(--ff-serif); color: var(--main-blue); }
+.size-price { font-size: 1.5rem; font-weight: bold; margin: 15px 0; }
+
+/* ===== ფუტერი ===== */
+footer { background: var(--dark); color: white; padding: 60px 5% 20px; }
+.footer-inner {
+  max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px;
+}
+.footer-bottom { text-align: center; padding-top: 20px; font-size: 0.8rem; opacity: 0.6; }
+
+/* ===== ანიმაცია ===== */
+.reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ===== მობილური მენიუ ===== */
+.hamburger { display: none; background: none; border: none; cursor: pointer; }
+.hamburger span { display: block; width: 25px; height: 3px; background: var(--dark); margin: 5px; }
+
+@media (max-width: 768px) {
+  .nav-links, .nav-right { display: none; }
+  .hamburger { display: block; }
+  .hero-inner { grid-template-columns: 1fr; text-align: center; }
+  .hero h1 { font-size: 2.5rem; }
+  .hero-btns { justify-content: center; }
+  .mobile-menu {
+    display: none; position: fixed; top: 70px; left: 0; width: 100%;
+    background: white; padding: 20px; flex-direction: column; gap: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  .mobile-menu.open { display: flex; }
+}
+
